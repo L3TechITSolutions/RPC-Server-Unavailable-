@@ -1,0 +1,34 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32> Get-ADComputer -Filter * -Properties * | group -Property operatingSystem | Select Name,Count
+
+Name                                  Count
+----                                  -----
+Windows Server 2019 Standard             58
+Windows 10 Education                      5
+Windows 10 Pro                         6345
+Windows 7 Professional                  258
+Windows 10 Pro N                        144
+Windows 7 Ultimate                       57
+Windows 11 Pro                         1055
+Windows Server 2012 R2 Standard           2
+Windows Server 2016 Standard              2
+                                         23
+Windows 10 Pro Education                  5
+Windows 10 Enterprise                    18
+Windows 10 Enterprise N                   2
+Windows 10 Pro for Workstations           2
+Windows 10 Enterprise LTSC Evaluation     1
+Windows 10 IoT Enterprise LTSC           51
+Windows Server 2019 Datacenter            6
+Windows 10 Enterprise 2016 LTSB           1
+macOS                                     1
+Windows 11 Enterprise                     1
+Windows 10 Enterprise LTSC                4
+Windows Server 2016 Datacenter            1
+pc-linux-gnu                              1
+Windows 7 Aero Blue Lite Edition 2016     1
+
+
+PS C:\Windows\system32> Get-ADComputer -Filter {OperatingSystem -like "*pc-linux-gnu*"} -Property Name, OperatingSystem | Select-Object Name, OperatingSystem
